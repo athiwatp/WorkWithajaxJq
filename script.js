@@ -18,4 +18,9 @@ $(function(){
 		outline : "2px dashed salmon"
 	});
 	/* end css */
+	for ($i=0;$i<4;$i++){
+		$(".menu").append("<li></li>");
+		$("li").eq($i).append("<a href=\"#\">"+"menu"+$i+"</a>");
+	}
+	$("li").wrapAll("<ul />");
 });
