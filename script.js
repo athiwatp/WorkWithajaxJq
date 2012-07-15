@@ -23,4 +23,32 @@ $(function(){
 		$("li").eq($i).append("<a href=\"#\">"+"menu"+$i+"</a>");
 	}
 	$("li").wrapAll("<ul />");
+	/**/
+	$("li").each(function(index) {
+		$(this).click(function(){
+			switch (index){
+				case  0 :
+					$res = "0.html"; 
+				break;
+
+				case  1 :
+					$res = "1.html";
+				break;
+
+				case  2 :
+					$res = "2.html";
+				break;
+
+				default : 
+					$res = "3.html";
+				break;
+			}
+			$.ajax({
+				url : $res,
+				success : function(data){
+					$(".box").html(data);	
+				}
+			});
+		});
+	});
 });
